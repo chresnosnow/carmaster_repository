@@ -231,7 +231,7 @@
 						<!--Espaciador vertical-->
 						<div class="my-2"></div>
 						<!-- Page Heading -->
-						<center><h1 class="h3 mb-4 text-gray-800">Clientes Activos <i class="fas fa-user-check"></i></h1></center>
+						<center><h1 class="h3 mb-4 text-gray-800">Contratos Activos <i class="fas fa-user-check"></i></h1></center>
 						<!--Espaciador vertical-->
 						<div class="my-2"></div>
 				
