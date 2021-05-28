@@ -465,8 +465,8 @@
                                 </div>
                                 <div class="card-body">
                                     <p>La información del número de DUI ingresado es la siguiente: </p>
-                                    <a href="#" class="btn btn-warning btn-user btn-block"> Desea Cancelar Operacion?</a>
-                                    <form class="user" action="cards copy.php" method="POST">
+                                    <a href="cards copy.html" class="btn btn-warning btn-user btn-block"> ¿Desea Cancelar Operacion?</a>
+                                    
                                         
                                         <hr>
                                         <?php
@@ -489,7 +489,7 @@ if($row = mysqli_fetch_row($retry_value)){
     placeholder='Numero de DUI' name='id_dui' value='".$row[0]."' />";
     echo "</div>";
     echo "<div class='col-sm-3'>";
-    echo "Número de NIT<input type='number' class='form-control form-control-user' id='exampleFirstName'
+    echo "Número de NIT<input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
     placeholder='Numero de NIT' name='nit' value='".$row[1]."' />";
     echo "</div>";
     echo "</div>";
@@ -537,7 +537,8 @@ if($row = mysqli_fetch_row($retry_value)){
     placeholder='Numero de Licencia' name='licencia' value='".$row[10]."' />";
     echo "</div>";
     echo "</div>";
-    echo "<input type='submit' class='btn btn-success btn-user btn-block' value='Actualizar'/>";
+    echo "<hr>";
+    echo "<input type='submit' class='btn btn-primary btn-user btn-block' value='Actualizar'/>";
     echo "</form>";
 }
 

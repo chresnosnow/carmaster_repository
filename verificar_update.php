@@ -14,6 +14,6 @@ if (!$retry_value) {
 }
 
 mysqli_close($link);
-header('Location: index.html');
+header('Location: cards copy.html');
 		
 ?>
