@@ -452,6 +452,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
 
                     <div class="row">
@@ -460,7 +461,7 @@
 
                             <!-- Default Card Example -->
                             <div class="card mb-4">
-                                <div class="card-header" style="text-align: center;">
+                                <div class="card-header m-0 font-weight-bold text-primary card border-left-primary shadow h-100 py-2" style="text-align: center;">
                                     Verificar Cliente
                                 </div>
                                 <div class="card-body">
@@ -470,45 +471,62 @@
                                             <input type="text" class="form-control form-control-user" id="exampleFirstName" name="id_dui"
                                                 placeholder="Numero de DUI sin guión" required/>
                                         </div>
-                                        <input class="btn btn-primary btn-user btn-block" name="submit" type="submit" value="Verificar"/>
-                                        <hr>
+                                        <input class="btn btn-primary btn-user btn-block font-weight-bold text-white" name="submit" type="submit" value="VERIFICAR"/>
                                     </form>
                                 </div>
                             </div>
-
-                            
-
-                        </div>
-
-                        <div class="col-lg">
-
                             <!-- Basic Card Example -->
                             <div class="card shadow mb-4">
-                                <div class="card-header py-3" style="text-align: center;">
+                                <div class="card-header card border-left-warning shadow h-100 py-2" style="text-align: center;">
+                                    <h6 class="m-0 font-weight-bold text-primary">Notificar al Cliente</h6>
+                                </div>
+                                <div class="card-body" style="text-align: justify;">
+                                    Despues de realizar el CONTRATO debes notificar al Correo asociado al Cliente, detalles de su Servicio
+                                    para dejar constancia de la realización del contrato de Rent A Car. Presiona "Realizar Notificación"
+                                    <hr>
+                                    <a href="index.html" class="btn btn-warning btn-user btn-block m-0 font-weight-bold text-white">
+                                        REALIZAR NOTIFICACION
+                                    </a>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb">
+    
+                            <!-- Basic Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header card border-left-success shadow h-100 py-2" style="text-align: center;">
                                     <h6 class="m-0 font-weight-bold text-primary">¿Abrir Contrato a Partir de un Nuevo Cliente?</h6>
                                 </div>
-                                <div class="card-body">
-                                    The styling for this basic card example is created by using default Bootstrap
-                                    utility classes. By using utility classes, the style of the card component can be
-                                    easily modified with no need for any custom CSS!
+                                <div class="card-body" style="text-align: justify;">
+                                    Despues de verificar al cliente y se compruebe que es NUEVO en el sistema, se debe completar la información
+                                    necesaria para proceder con el Servicio de Rent A Car.
+                                    Presiona "Crear Contrato Ahora"
+                                    <hr>
+                                    <a href="index.html" class="btn btn-success btn-user btn-block m-0 font-weight-bold text-white">
+                                        CREAR CONTRATO AHORA
+                                    </a>  
                                 </div>
                             </div>
 
                             <!-- Basic Card Example -->
                             <div class="card shadow mb-4">
-                                <div class="card-header py-3" style="text-align: center;">
+                                <div class="card-header card border-left-info shadow h-100 py-2" style="text-align: center;">
                                     <h6 class="m-0 font-weight-bold text-primary">¿Abrir Contrato a Partir de un Cliente Existente? </h6>
                                 </div>
-                                <div class="card-body">
-                                    The styling for this basic card example is created by using default Bootstrap
-                                    utility classes. By using utility classes, the style of the card component can be
-                                    easily modified with no need for any custom CSS!
+                                <div class="card-body" style="text-align:justify">
+                                    Despues de comprobar que el Cliente ya es EXISTENTE en los registros del Sistma y sus
+                                    datos corresponden a esté, se debe abrir contrato pertinente para gozar del Servicio
+                                    de Rent A Car. Presiona "Abrir Contrato Ahora"
+                                    <hr>
+                                    <a href="index.html" class="btn btn-info btn-user btn-block m-0 font-weight-bold text-white">
+                                        ABRIR CONTRATO AHORA
+                                    </a>  
                                 </div>
                             </div>
 
                         </div>
-
                     </div>
+                    
 
                 </div>
                 <!-- /.container-fluid -->

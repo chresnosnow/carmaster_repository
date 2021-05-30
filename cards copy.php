@@ -486,55 +486,55 @@ if($row = mysqli_fetch_row($retry_value)){
     echo "<div class='form-group'>";
     echo "<div class='col-sm-6 mb-3 mb-sm-0'>";
     echo "<input disable type='HIDDEN' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Numero de DUI' name='id_dui' value='".$row[0]."' />";
+    placeholder='Numero de DUI' name='id_dui' value='".$row[0]."' required/>";
     echo "</div>";
     echo "<div class='col-sm-3'>";
     echo "Número de NIT<input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Numero de NIT' name='nit' value='".$row[1]."' />";
+    placeholder='Numero de NIT' name='nit' value='".$row[1]."' required/>";
     echo "</div>";
     echo "</div>";
     echo "<div class='form-group row'>";
     echo "<div class='col-sm-6 mb-3 mb-sm-0'>";
     echo "Nombres: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Nombres' name='nombres' value='".$row[2]."' />";
+    placeholder='Nombres' name='nombres' value='".$row[2]."' required/>";
     echo "</div>";
     echo "<div class='col-sm-6'>";
     echo "Apellidos: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Apellidos' name='apellidos' value='".$row[3]."' />";
+    placeholder='Apellidos' name='apellidos' value='".$row[3]."' required/>";
     echo "</div>";
     echo "</div>";
     echo "<div class='form-group'>";
     echo "Residencia: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Dirección' name='direccion' value='".$row[4]."' />";
+    placeholder='Dirección' name='direccion' value='".$row[4]."' required/>";
     echo "</div>";
     echo "<div class='form-group row'>";
     echo "<div class='col-sm-6 mb-3 mb-sm-0'>";
     echo "Telefono: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Número de Telefono' name='telefono' value='".$row[5]."' />";
+    placeholder='Número de Telefono' name='telefono' value='".$row[5]."' required/>";
     echo "</div>";
     echo "<div class='col-sm-6'>";
     echo "Pais: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='País' name='pais' value='".$row[6]."' />";
+    placeholder='País' name='pais' value='".$row[6]."' required/>";
     echo "</div>";
     echo "</div>";
     echo "<div class='form-group row'>";
     echo "<div class='col-sm-6 mb-3 mb-sm-0'>";
     echo "Correo: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Correo Electronico' name='correo' value='".$row[7]."' />";
+    placeholder='Correo Electronico' name='correo' value='".$row[7]."' required/>";
     echo "</div>";
     echo "<div class='col-sm-6'>";
     echo "Contacto de referencia: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Contacto de referencia' name='refe_nombre' value='".$row[8]."' />";
+    placeholder='Contacto de referencia' name='refe_nombre' value='".$row[8]."' required/>";
     echo "</div>";
     echo "</div>";
     echo "<div class='form-group row'>";
     echo "<div class='col-sm-6 mb-3 mb-sm-0'>";
     echo "Telefono de Contacto: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Numero de referencia' name='refe_telefono' value='".$row[9]."' />";
+    placeholder='Numero de referencia' name='refe_telefono' value='".$row[9]."' required/>";
     echo "</div>";
     echo "<div class='col-sm-6'>";
     echo "Licencia Asociada: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
-    placeholder='Numero de Licencia' name='licencia' value='".$row[10]."' />";
+    placeholder='Numero de Licencia' name='licencia' value='".$row[10]."' required/>";
     echo "</div>";
     echo "</div>";
     echo "<hr>";
