@@ -65,9 +65,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Componentes:</h6>
-                        <a class="collapse-item" href="vehiculos.php">Vehiculos Disponibles</a>
-                        <a class="collapse-item" href="cards.html">Entrega de Vehiculos</a>
-						<a class="collapse-item" href="cards.html">Devolución de Vehiculos</a>
+                        <a class="collapse-item active" href="vehiculos.php">Vehiculos Disponibles</a>
+                        <a class="collapse-item" href="cards copy.html">Entrega de Vehiculos</a>
+						<a class="collapse-item" href="#">Devolución de Vehiculos</a>
 						<a class="collapse-item" href="clientes.php">Clientes Activos</a>
                     </div>
                 </div>
@@ -199,7 +199,7 @@
                                     <!-- Botones rectangulares de Menu -->
                                     <div class="my-2"></div>
 									<center>
-                                    <a href="#" class="btn btn-primary btn-icon-split">
+                                    <a href="cards copy.html" class="btn btn-primary btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
