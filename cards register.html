@@ -75,10 +75,6 @@
                     </div>
                 </div>
             </li>
-            
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -390,7 +386,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
 
                     <div class="row">
@@ -399,72 +394,80 @@
 
                             <!-- Default Card Example -->
                             <div class="card mb-4">
-                                <div class="card-header m-0 font-weight-bold text-primary card border-left-primary shadow h-100 py-2" style="text-align: center;">
-                                    Verificar Cliente
+                                <div class="card-header font-weight-bold text-primary" style="text-align: center;" >
+                                    Nuevo Ingreso de Clientes
                                 </div>
                                 <div class="card-body">
-                                    <form class="user" action="cards copy.php" method="POST">
-                                        <div class="form-group">
-                                            <label for="id_dui">Colocar el Numero de DUI <span><em>(requerido)</em></span></label>
-                                            <input type="text" class="form-control form-control-user" id="exampleFirstName" name="id_dui"
-                                                placeholder="Numero de DUI sin guión" required/>
+                                    <p>Complete los Campos Siguientes para ingresar al nuevo cliente al Sistema: </p>
+                                    <a href="cards copy.html" class="btn btn-warning btn-user btn-block"> ¿Desea Cancelar Operacion?</a>
+                                    
+                                        
+                                        <hr>
+                                    <form class='user' action='cards register.php' method='POST'>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-3 mb-3 mb-sm-0'>
+                                        Inserte el N° DUI: <input type='number' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Numero de DUI' name='id_dui' value='' required/>
                                         </div>
-                                        <input class="btn btn-primary btn-user btn-block font-weight-bold text-white" name="submit" type="submit" value="VERIFICAR"/>
+                                        <div class='col-sm-3'>
+                                        Número de NIT<input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Numero de NIT' name='nit' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Nombres: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Nombres' name='nombres' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Apellidos: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Apellidos' name='apellidos' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group'>
+                                        Residencia: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Dirección' name='direccion' value='' required/>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Telefono: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Número de Telefono' name='telefono' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Pais: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='País' name='pais' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Correo: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Correo Electronico' name='correo' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Contacto de referencia: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Contacto de referencia' name='refe_nombre' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Telefono de Contacto: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Numero de referencia' name='refe_telefono' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Licencia Asociada: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Numero de Licencia' name='licencia' value='' required/>
+                                        </div>
+                                        </div>
+                                        <hr>
+                                        <input type='submit' class='btn btn-primary btn-user btn-block font-weight-bold text-white' value='INGRESAR NUEVO CLIENTE'/>
+                                    
+                                    
                                     </form>
-                                </div>
-                            </div>
-                            <!-- Basic Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header card border-left-warning shadow h-100 py-2" style="text-align: center;">
-                                    <h6 class="m-0 font-weight-bold text-primary">Notificar al Cliente</h6>
-                                </div>
-                                <div class="card-body" style="text-align: justify;">
-                                    Despues de realizar el CONTRATO debes notificar al Correo asociado al Cliente, detalles de su Servicio
-                                    para dejar constancia de la realización del contrato de Rent A Car. Presiona "Realizar Notificación"
-                                    <hr>
-                                    <a href="index.html" class="btn btn-warning btn-user btn-block m-0 font-weight-bold text-white">
-                                        REALIZAR NOTIFICACION
-                                    </a>  
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb">
-    
-                            <!-- Basic Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header card border-left-success shadow h-100 py-2" style="text-align: center;">
-                                    <h6 class="m-0 font-weight-bold text-primary">¿Abrir Contrato a Partir de un Nuevo Cliente?</h6>
-                                </div>
-                                <div class="card-body" style="text-align: justify;">
-                                    Despues de verificar al cliente y se compruebe que es NUEVO en el sistema, se debe completar la información
-                                    necesaria para proceder con el Servicio de Rent A Car.
-                                    Presiona "Crear Contrato Ahora"
-                                    <hr>
-                                    <a href="cards register.html" class="btn btn-success btn-user btn-block m-0 font-weight-bold text-white">
-                                        CREAR CONTRATO AHORA
-                                    </a>  
-                                </div>
-                            </div>
-
-                            <!-- Basic Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header card border-left-info shadow h-100 py-2" style="text-align: center;">
-                                    <h6 class="m-0 font-weight-bold text-primary">¿Abrir Contrato a Partir de un Cliente Existente? </h6>
-                                </div>
-                                <div class="card-body" style="text-align:justify">
-                                    Despues de comprobar que el Cliente ya es EXISTENTE en los registros del Sistma y sus
-                                    datos corresponden a esté, se debe abrir contrato pertinente para gozar del Servicio
-                                    de Rent A Car. Presiona "Abrir Contrato Ahora"
-                                    <hr>
-                                    <a href="index.html" class="btn btn-info btn-user btn-block m-0 font-weight-bold text-white">
-                                        ABRIR CONTRATO AHORA
-                                    </a>  
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    
 
                 </div>
                 <!-- /.container-fluid -->
