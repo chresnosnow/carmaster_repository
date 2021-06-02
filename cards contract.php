@@ -75,10 +75,6 @@
                     </div>
                 </div>
             </li>
-            
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -390,7 +386,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
 
                     <div class="row">
@@ -399,72 +394,117 @@
 
                             <!-- Default Card Example -->
                             <div class="card mb-4">
-                                <div class="card-header m-0 font-weight-bold text-primary card border-left-primary shadow h-100 py-2" style="text-align: center;">
-                                    Verificar Cliente
+                                <div class="card-header font-weight-bold text-primary" style="text-align: center;" >
+                                    INFORMACION DE VEHICULOS DISPONIBLES PARA CONTRATO
                                 </div>
                                 <div class="card-body">
-                                    <form class="user" action="cards copy.php" method="POST">
-                                        <div class="form-group">
-                                            <label for="id_dui">Colocar el Numero de DUI <span><em>(requerido)</em></span></label>
-                                            <input type="text" class="form-control form-control-user" id="exampleFirstName" name="id_dui"
-                                                placeholder="Numero de DUI sin guión" required/>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>N° Placa</th>
+                                                    <th>Modelo</th>
+                                                    <th>Marca</th>
+                                                    <th>Color</th>
+                                                    <th>Pasajeros</th>
+                                                    <th>Kilometraje</th>
+                                                    <th>Año</th>
+                                                    <th>Cilindraje</th>
+                                                    <th>Transmision</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+        <?php
+                    include './conexion.php';
+                    include './listar_vehiculos_disponibles.php';
+                    
+              if(!$ejecuta_sentencia){
+                  echo'Hay un error en la sentencia SQL:' .mysqli_error();
+              }else{
+               }
+                                while($row=mysqli_fetch_array($ejecuta_sentencia)) {                              
+                                  echo"<tr>";
+                                    echo"<td>".$row['id_placa']."</td>";
+                                    echo"<td>".$row['modelo']."</td>";
+                                    echo"<td>".$row['marca']."</td>";
+                                    echo"<td>".$row['color']."</td>";
+                                    echo"<td>".$row['pasajeros']."</td>";
+                                    echo"<td>".$row['kilometraje']."</td>";
+                                    echo"<td>".$row['anno']."</td>";
+                                    echo"<td>".$row['cilindraje']."</td>";
+                                    echo"<td>".$row['transmision']."</td>";
+                                  echo"</tr>";
+                                }
+        ?>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-4">
+                                <div class="card-header font-weight-bold text-primary" style="text-align: center;" >
+                                    Nuevo Contrato de Clientes
+                                </div>
+                                <div class="card-body">
+                                    <p>Complete los Campos Siguientes para ingresar al nuevo contrato al Sistema: </p>
+                                    <a href="cards copy.html" class="btn btn-warning btn-user btn-block"> ¿Desea Cancelar Operacion?</a>
+                                    
+                                        
+                                        <hr>
+                                    <form class='user' action='cards rcontract.php' method='POST'>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-3 mb-3 mb-sm-0'>
+                                        Inserte el N° DUI: <input type='number' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Numero de DUI' name='id_dui' value='' required/>
                                         </div>
-                                        <input class="btn btn-primary btn-user btn-block font-weight-bold text-white" name="submit" type="submit" value="VERIFICAR"/>
+                                        <div class='col-sm-3'>
+                                        Número de contrato Auto Incrementado<input type='HIDDEN' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='N° Contrato' name='id_contrato' value=''/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        N° Placa del Auto Disponible: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='N° Placa' name='id_placa' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Nombre del Cliente ( Nombre Abreviado o Completo): <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Nombres y Apellidos' name='nombre_cliente' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Fecha de Apertura: <input type='DATE' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Fecha Inicial' name='fechini' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Fecha Final: <input type='DATE' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Fecha Final' name='fechafin' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Costo Total: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Costo del Contrato' name='costo' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Estado de Contrato ACTIVO por DEFECTO: <input type='HIDDEN' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Estado' name='estado' value='1' required/>
+                                        </div>
+                                        </div>
+                                        <hr>
+                                        <input type='submit' class='btn btn-primary btn-user btn-block font-weight-bold text-white' value='ABRIR CONTRATO'/>
+                                    
+                                    
                                     </form>
-                                </div>
-                            </div>
-                            <!-- Basic Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header card border-left-warning shadow h-100 py-2" style="text-align: center;">
-                                    <h6 class="m-0 font-weight-bold text-primary">Notificar al Cliente</h6>
-                                </div>
-                                <div class="card-body" style="text-align: justify;">
-                                    Despues de realizar el CONTRATO debes notificar al Correo asociado al Cliente, detalles de su Servicio
-                                    para dejar constancia de la realización del contrato de Rent A Car. Presiona "Realizar Notificación"
-                                    <hr>
-                                    <a href="index.html" class="btn btn-warning btn-user btn-block m-0 font-weight-bold text-white">
-                                        REALIZAR NOTIFICACION
-                                    </a>  
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb">
-    
-                            <!-- Basic Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header card border-left-success shadow h-100 py-2" style="text-align: center;">
-                                    <h6 class="m-0 font-weight-bold text-primary">¿Abrir Contrato a Partir de un Nuevo Cliente?</h6>
-                                </div>
-                                <div class="card-body" style="text-align: justify;">
-                                    Despues de verificar al cliente y se compruebe que es NUEVO en el sistema, se debe completar la información
-                                    necesaria para proceder con el Servicio de Rent A Car.
-                                    Presiona "Crear Contrato Ahora"
-                                    <hr>
-                                    <a href="cards register.html" class="btn btn-success btn-user btn-block m-0 font-weight-bold text-white">
-                                        CREAR CONTRATO AHORA
-                                    </a>  
-                                </div>
-                            </div>
-
-                            <!-- Basic Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header card border-left-info shadow h-100 py-2" style="text-align: center;">
-                                    <h6 class="m-0 font-weight-bold text-primary">¿Abrir Contrato a Partir de un Cliente Existente? </h6>
-                                </div>
-                                <div class="card-body" style="text-align:justify">
-                                    Despues de comprobar que el Cliente ya es EXISTENTE en los registros del Sistma y sus
-                                    datos corresponden a esté, se debe abrir contrato pertinente para gozar del Servicio
-                                    de Rent A Car. Presiona "Abrir Contrato Ahora"
-                                    <hr>
-                                    <a href="cards contract.php" class="btn btn-info btn-user btn-block m-0 font-weight-bold text-white">
-                                        ABRIR CONTRATO AHORA
-                                    </a>  
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    
 
                 </div>
                 <!-- /.container-fluid -->
