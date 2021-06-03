@@ -235,78 +235,86 @@
 						<div class="my-2"></div>
 				
 					<!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                    
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Vehiculos y sus Caracteristicas</h6>
-                        </div>
-                        <div class="card-body">
-                        <a href="vehiculos_form.html" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-flag"></i>
-                                        </span>
-                                        <span class="text">Inscribir Nuevos Vehiculos</span>
-                                    </a>
-                                    <hr>
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>N° Placa</th>
-                                            <th>Modelo</th>
-											<th>Marca</th>
-											<th>Color</th>
-											<th>Pasajeros</th>
-											<th>Kilometraje</th>
-											<th>Año</th>
-                                            <th>Cilindraje</th>
-                                            <th>Transmision</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>N° Placa</th>
-                                            <th>Modelo</th>
-											<th>Marca</th>
-											<th>Color</th>
-											<th>Pasajeros</th>
-											<th>Kilometraje</th>
-											<th>Año</th>
-                                            <th>Cilindraje</th>
-                                            <th>Transmision</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-<?php
-			include './conexion.php';
-			include './listar_vehiculos_disponibles.php';
-			
-      if(!$ejecuta_sentencia){
-          echo'Hay un error en la sentencia SQL:' .mysqli_error();
-      }else{
-       }
-                        while($row=mysqli_fetch_array($ejecuta_sentencia)) {                              
-                          echo"<tr>";
-                            echo"<td>".$row['id_placa']."</td>";
-							echo"<td>".$row['modelo']."</td>";
-							echo"<td>".$row['marca']."</td>";
-							echo"<td>".$row['color']."</td>";
-							echo"<td>".$row['pasajeros']."</td>";
-							echo"<td>".$row['kilometraje']."</td>";
-                            echo"<td>".$row['anno']."</td>";
-                            echo"<td>".$row['cilindraje']."</td>";
-                            echo"<td>".$row['transmision']."</td>";
-                          echo"</tr>";
-                        }
-?>
-                                        </tr>
+                    <div class="row">
+
+                        <div class="col-lg">
+
+                            <!-- Default Card Example -->
+                            <div class="card mb-4">
+                                <div class="card-header font-weight-bold text-primary" style="text-align: center;" >
+                                    Inscripcion de Vehiculos
+                                </div>
+                                <div class="card-body">
+                                    <p>Complete los Campos Siguientes para ingresar al nuevo vehiculo al Sistema: </p>
+                                    <a href="vehiculos.php" class="btn btn-warning btn-user btn-block"> ¿Desea Cancelar Operacion?</a>
+                                    
                                         
-                                    </tbody>
-                                </table>
+                                        <hr>
+                                    <form class='user' action='vehiculos_register.php' method='POST'>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-3 mb-3 mb-sm-0'>
+                                        Inserte el N° Placa: <input type='text' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Numero de Placa' name='id_placa' value='' required/>
+                                        </div>
+                                        <div class='col-sm-3'>
+                                        Escriba el Modelo del Vehiculo<input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Modelo' name='modelo' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Marca: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Introduzca la Marca' name='marca' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Color del Vehiculo: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Color/tono' name='color' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group'>
+                                        kilometraje Actual: <input type='number' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='kilometraje recorrido' name='kilometraje' value='' required/>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Año del Vehiculo: <input type='number' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Introduzca el Año del Vehiculo' name='anno' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Tipo de Carroceria: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Tipo de Carroceria' name='tipo_carroceria' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Potencia / Cilindraje: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='cilindraje del vehiculo' name='cilindraje' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Transmision: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Transmision' name='transmision' value='' required/>
+                                        </div>
+                                        </div>
+                                        <div class='form-group row'>
+                                        <div class='col-sm-6 mb-3 mb-sm-0'>
+                                        Capacidad de Pasajeros Maximo: <input type='number' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='Introduzca la cantidad' name='pasajeros' value='' required/>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                        Estado por Defecto esta Disponible. <input type='hidden' class='form-control form-control-user' id='exampleFirstName'
+                                        placeholder='estado' name='estado' value='1' required/>
+                                        </div>
+                                        </div>
+                                        <hr>
+                                        <input type='submit' class='btn btn-primary btn-user btn-block font-weight-bold text-white' value='INGRESAR NUEVO VEHICULO'/>
+                                    
+                                    
+                                    </form>
+                                </div>
                             </div>
+
                         </div>
-                    </div>	
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
