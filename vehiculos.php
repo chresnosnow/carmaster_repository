@@ -67,7 +67,7 @@
                         <h6 class="collapse-header">Componentes:</h6>
                         <a class="collapse-item active" href="vehiculos.php">Vehiculos Disponibles</a>
                         <a class="collapse-item" href="cards copy.html">Entrega de Vehiculos</a>
-						<a class="collapse-item" href="#">Devolución de Vehiculos</a>
+						<a class="collapse-item" href="cards devo.html">Devolución de Vehiculos</a>
 						<a class="collapse-item" href="clientes.php">Clientes Activos</a>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
                                         </span>
                                         <span class="text">Registro de Entrega</span>
                                     </a>
-                                    <a href="#" class="btn btn-info btn-icon-split">
+                                    <a href="cards devo.html" class="btn btn-info btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-flag"></i>
                                         </span>
