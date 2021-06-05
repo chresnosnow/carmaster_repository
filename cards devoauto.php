@@ -75,10 +75,6 @@
                     </div>
                 </div>
             </li>
-            
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -305,56 +301,147 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Devolucion de Vehiculos <i class="fas fa-car-side"></i></h1>
                     </div>
-
-
                     <div class="row">
 
                         <div class="col-lg">
-
                             <!-- Default Card Example -->
                             <div class="card mb-4">
-                                <div class="card-header m-0 font-weight-bold text-primary card border-left-info shadow h-100 py-2" style="text-align: center;">
-                                    Devolucion de Contratos Vigentes
+                                <div class="card-header font-weight-bold text-primary" style="text-align: center;" >
+                                    INFORMACION DE VEHICULOS DISPONIBLES
                                 </div>
-                                <div class="card-body" style="text-align: justify;">
-                                    Sistema de Control de estado de Contratos por Terminaciones y Dado de Bajas.
-                                    <form class="user" action="cards devstate.php" method="POST">
-                                        <div class="form-group">
-                                            <label for="id_dui">Colocar el Numero de DUI asociado al Contrato Vigente <span><em>(requerido)</em></span></label>
-                                            <input type="text" class="form-control form-control-user" id="exampleFirstName" name="id_dui"
-                                                placeholder="Numero de DUI sin guión" required/>
-                                        </div>
-                                        <hr>
-                                        <input class="btn btn-warning btn-user btn-block font-weight-bold text-white" name="submit" type="submit" value="CONTINUAR PROCESO"/>
-                                    </form>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>N° Placa</th>
+                                                    <th>Modelo</th>
+                                                    <th>Marca</th>
+                                                    <th>Color</th>
+                                                    <th>Pasajeros</th>
+                                                    <th>Kilometraje</th>
+                                                    <th>Año</th>
+                                                    <th>Cilindraje</th>
+                                                    <th>Transmision</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+        <?php
+                    include './conexion.php';
+                    include './listar_vehiculos_disponibles.php';
+                    
+              if(!$ejecuta_sentencia){
+                  echo'Hay un error en la sentencia SQL:' .mysqli_error();
+              }else{
+               }
+                                while($row=mysqli_fetch_array($ejecuta_sentencia)) {                              
+                                  echo"<tr>";
+                                    echo"<td>".$row['id_placa']."</td>";
+                                    echo"<td>".$row['modelo']."</td>";
+                                    echo"<td>".$row['marca']."</td>";
+                                    echo"<td>".$row['color']."</td>";
+                                    echo"<td>".$row['pasajeros']."</td>";
+                                    echo"<td>".$row['kilometraje']."</td>";
+                                    echo"<td>".$row['anno']."</td>";
+                                    echo"<td>".$row['cilindraje']."</td>";
+                                    echo"<td>".$row['transmision']."</td>";
+                                  echo"</tr>";
+                                }
+        ?>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 mb">
-    
-                            <!-- Basic Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header card border-left-info shadow h-100 py-2" style="text-align: center;">
-                                    <h6 class="m-0 font-weight-bold text-primary">Devolucion de Autos Por Contratos Vigentes</h6>
-                                </div>
-                                <div class="card-body" style="text-align: justify;">
-                                    Sistema de Control de Modificacion de Contratos vigentes por problemas mecanicos y tecnicos de los Vehiculos.
-                                    <form class="user" action="cards devoauto.php" method="POST">
-                                        <div class="form-group">
-                                            <label for="id_dui">Colocar el Numero de DUI asociado al Contrato Vigente <span><em>(requerido)</em></span></label>
-                                            <input type="text" class="form-control form-control-user" id="exampleFirstName" name="id_dui"
-                                                placeholder="Numero de DUI sin guión" required/>
-                                        </div>
-                                        <hr>
-                                        <input class="btn btn-warning btn-user btn-block font-weight-bold text-white" name="submit" type="submit" value="CONTINUAR PROCESO"/>
-                                    </form>
 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-4">
+                                <div class="card-header font-weight-bold text-primary" style="text-align: center;" >
+                                    Devolucion de Vehiculos de Contrato Vigente
+                                </div>
+                                <div class="card-body">
+                                    <p>Detalles del Contrato Vigente, Cambie la Solicitud de Contrato: </p>
+                                    <a href="cards devo.html" class="btn btn-warning btn-user btn-block"> ¿Desea Cancelar Operacion?</a>
+                                    
+                                        
+                                        <hr>
+                                        <?php
+include 'conexion.php';
+$db_table_name="contratos";
+$subs_duii = utf8_decode($_POST['id_dui']);
+if (!$link) {
+	die('No se ha podido conectar a la base de datos');
+}
+$insert_value = 'SELECT * FROM `' . $db_name . '`.`'.$db_table_name.'` WHERE `id_dui` = "' . $subs_duii . '" and `estado` = "1" ';
+
+mysqli_select_db($link, $db_name);
+$retry_value = mysqli_query($link, $insert_value);
+
+if($row = mysqli_fetch_row($retry_value)){
+    echo "<form class='user' action='cards devupdatec.php' method='POST'>";
+    echo "<div class='form-group row'>";
+    echo "<div class='col-sm-6 mb-3 mb-sm-0'>";
+    echo "N° Contrato: <input disable type='text' class='form-control form-control-user' id='exampleFirstName'
+    placeholder='Numero de Contrato' name='id_contrato' value='".$row[0]."' readonly/>";
+    echo "</div>";
+    echo "<div class='col-sm-6'>";
+    echo "Número de DUI: <input type='text' class='form-control form-control-user' id='exampleFirstName'
+    placeholder='Numero de DUI' name='id_dui' value='".$row[1]."' readonly/>";
+    echo "</div>";
+    echo "</div>";
+    echo "<div class='form-group row'>";
+    echo "<div class='col-sm-6 mb-3 mb-sm-0'>";
+    echo "N° Placa Asociada al Contrato: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+    placeholder='Numero de Placa' name='id_placa' value='".$row[2]."' requerid/>";
+    echo "</div>";
+    echo "<div class='col-sm-6'>";
+    echo "Nombres & Apellidos: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+    placeholder='Nombres & Apellidos' name='nombre_cliente' value='".$row[3]."' readonly/>";
+    echo "</div>";
+    echo "</div>";
+    echo "<div class='form-group row'>";
+    echo "<div class='col-sm-6 mb-3 mb-sm-0'>";
+    echo "Fecha Incial de Contrato: <input type='date' class='form-control form-control-user' id='exampleFirstName'
+    placeholder='Fecha Inicial' name='fechini' value='".$row[4]."' requerid/>";
+    echo "</div>";
+    echo "<div class='col-sm-6 mb-3 mb-sm-0'>";
+    echo "Fecha Final de Contrato: <input type='date' class='form-control form-control-user' id='exampleFirstName'
+    placeholder='Fecha Final' name='fechafin' value='".$row[5]."' requerid/>";
+    echo "</div>";
+    echo "</div>";
+    echo "<div class='form-group row'>";
+    echo "<div class='col-sm-6'>";
+    echo "Costo de Contrato Nuevo: <input type='TEXT' class='form-control form-control-user' id='exampleFirstName'
+    placeholder='Costo' name='costo' value='".$row[6]."' requerid/>";
+    echo "</div>";
+    echo "<div class='col-sm-6'>";
+    echo "Estado de Contrato ACTIVO: <input type='HIDDEN' class='form-control form-control-user' id='exampleFirstName'
+    placeholder='estado' name='estado' value='".$row[7]."' requerid/>";
+    echo "</div>";
+    echo "</div>";
+    echo "<hr>";
+    echo "<input type='submit' class='btn btn-primary btn-user btn-block font-weight-bold text-white' value='MODIFICAR CONTRATO VIGENTE'/>";
+    echo "</form>";
+}
+
+if (!$retry_value) {
+   die('Error: ' . mysqli_error($link));
+}
+
+mysqli_close($link);
+
+		
+?> 
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    
 
                 </div>
                 <!-- /.container-fluid -->
