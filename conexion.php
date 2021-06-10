@@ -15,7 +15,7 @@ if(!$link){
     if(!$base){
         echo'No se encontro la base de datos:'.mysqli_error();
     }else{
-      //echo 'Conectado satisfactoriamente';
+      echo 'Conectado satisfactoriamente';
     }
     }
 	
